@@ -4,15 +4,20 @@
     var guessesLeft = 10;
     var guessesSoFarArray = [];
     var guessesSoFar;
+    var computerGuess;
 
     //array listing computer choices
     var computerChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-    console.log(computerGuess);
+    function start() {
+        computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+        console.log(computerGuess);
+        guessesSoFarArray = [];
+        }
+        //call function
+        start();
 
     
-
 
     //function run when user pushes key
     document.onkeyup = function(event) {
@@ -25,16 +30,19 @@
         if (event.key === computerGuess) {
             alert("You win! You must be psychic!");
             wins++;
+            start();
         }
 
         if (event.key !== computerGuess) {
             guessesLeft--;
         }
+
         //resets guesses left after loosing
         if (guessesLeft === 0) {
-            alert("You lost! You must not be psychic");
+            alert("You lost! Try again.");
             losses++;
             guessesLeft = 10;
+            start();
         }
 
         // Creating a variable to hold our new HTML. Keeps track of wins,losses, guesses left, guesses used
