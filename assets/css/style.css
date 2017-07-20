@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+    background: url("../images/space-background1.png");
+  }
+
+h1, h2, p{
+  color:#13e9f0;
+  text-align: center;
+  font-family: 'Varela Round', sans-serif;
+}
+
+img {
+  border: 5px solid #13e9f0;
+  display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
